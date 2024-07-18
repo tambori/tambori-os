@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Container, Main, Section } from "@/components/craft"
+import Logo from "@/assets/logo/logo-bg.svg";
 
 export default function Entry() {
   return (
@@ -12,10 +13,17 @@ export default function Entry() {
       <Section className="w-full !p-0 lg:grid lg:grid-cols-2 lg:h-full">
         <Container className="flex items-center justify-center h-full">
           <div className="mx-auto grid w-[350px] gap-6">
-            <div className="grid gap-2 text-center">
-              <h1 className="text-3xl font-bold">Login</h1>
+            <div className="grid gap-2 text-left">
+              <Image
+                src={Logo} alt="Image"
+                width="170"
+                height="170"
+                className="object-cover dark:brightness-[0.8] blur-xs dark:grayscale hover:dark:grayscale-0 transition-all hover:cursor-pointer"
+              />
+
+              <h1 className="text-3xl font-bold">Watch this space!</h1>
               <p className="text-balance text-muted-foreground">
-                Enter your email below to login to your account
+                Join the waitlist to be the first to get informed when we go live.
               </p>
             </div>
             <div className="grid gap-4">
@@ -28,7 +36,7 @@ export default function Entry() {
                   required
                 />
               </div>
-              <div className="grid gap-2">
+              {/* <div className="grid gap-2">
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
                   <Link
@@ -39,20 +47,20 @@ export default function Entry() {
                   </Link>
                 </div>
                 <Input id="password" type="password" required />
-              </div>
+              </div> */}
               <Button type="submit" className="w-full">
-                Login
+                Join the waitlist
               </Button>
-              <Button variant="outline" className="w-full">
+              {/* <Button variant="outline" className="w-full">
                 Login with Google
-              </Button>
+              </Button> */}
             </div>
-            <div className="mt-4 text-center text-sm">
+            {/* <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}
               <Link href="#" className="underline">
                 Sign up
               </Link>
-            </div>
+            </div> */}
           </div>
         </Container>
         <Container className="hidden bg-muted lg:block p-0">
