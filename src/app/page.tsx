@@ -6,11 +6,38 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Container, Main, Section } from "@/components/craft"
 import Logo from "@/assets/logo/logo-bg.svg";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { BellRing, Check, ExternalLink } from "lucide-react"
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
+
+const paywallFeatures = [
+  {
+    title: "Easy payment",
+    description: "Easy BTC/LNG payment for digital products."
+  },
+  {
+    title: "Manage subscriptions",
+    description: "Built in user subscription manager, with insights and tools."
+  }
+]
+
+const kitFeatures = [
+  {
+    title: "Moneytize your blog",
+    description: "Alternative payment model that is in your control."
+  },
+  {
+    title: "Great experience",
+    description: "Built to be easy for you and your readers, get all the insights."
+  }
+]
+
 
 export default function Entry() {
   return (
     <Main className="!p-0 h-screen">
-      <Section className="w-full !p-0 lg:grid lg:grid-cols-2 lg:h-full">
+      <Section className="w-full !p-0 lg:grid lg:grid-cols-2 sm:grid-cols-1 lg:h-full">
         <Container className="flex items-center justify-center h-full">
           <div className="mx-auto grid w-[350px] gap-6">
             <div className="grid gap-2 text-left">
@@ -36,41 +63,125 @@ export default function Entry() {
                   required
                 />
               </div>
-              {/* <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <Link
-                    href="/forgot-password"
-                    className="ml-auto inline-block text-sm underline"
-                  >
-                    Forgot your password?
-                  </Link>
-                </div>
-                <Input id="password" type="password" required />
-              </div> */}
               <Button type="submit" className="w-full">
                 Join the waitlist
               </Button>
-              {/* <Button variant="outline" className="w-full">
-                Login with Google
-              </Button> */}
             </div>
-            {/* <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <Link href="#" className="underline">
-                Sign up
-              </Link>
-            </div> */}
           </div>
         </Container>
-        <Container className="hidden bg-muted lg:block p-0">
-          <Image
-            src="/globe.svg"
-            alt="Image"
-            width="192"
-            height="108"
-            className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-          />
+        <Container className="bg-muted !sm:p-4 !lg:p-6 w-full grid lg:gap-4 gap-2 lg:grid-cols-2 sm:grid-cols-1">
+          <Section className="col-span-2">
+            <h1 className="text-3xl font-normal">The following domo links are meant for hackathon purposes only.</h1>
+          </Section>
+          {/* <Dialog>
+            <DialogTrigger asChild> */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Bit Paywall</CardTitle>
+              <CardDescription>A BTC/LNG payment/subscription gateway for merchants and online vendors</CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-4">
+              <div className="flex items-center space-x-4 rounded-md border p-4">
+                <ExclamationTriangleIcon />
+                <div className="flex-1 space-y-1">
+                  {                  /* <p className="text-sm font-medium leading-none">
+                    Experimental features
+                  </p> */}
+                  <p className="text-sm text-muted-foreground">
+                    Do not attempt to spend real asset.
+                  </p>
+                </div>
+                {/* <Switch /> */}
+              </div>
+              <div>
+                {paywallFeatures.map((feat, index) => (
+                  <div
+                    key={index}
+                    className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+                  >
+                    <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium leading-none">
+                        {feat.title}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {feat.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href={"/demo/paywall"} target="_blank" passHref className="w-full">
+                <Button className="w-full">
+                  Visit playground <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+          {            /* </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Bit paywall</DialogTitle>
+                <DialogDescription>A BTC/LNG payment wall for any content</DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog> */}
+                    <Card>
+            <CardHeader>
+              <CardTitle>BTC BlogKit</CardTitle>
+              <CardDescription>A medium article subscription alternative for personal and targetted articles.</CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-4">
+              <div className="flex items-center space-x-4 rounded-md border p-4">
+                <ExclamationTriangleIcon />
+                <div className="flex-1 space-y-1">
+                  {                  /* <p className="text-sm font-medium leading-none">
+                    Experimental features
+                  </p> */}
+                  <p className="text-sm text-muted-foreground">
+                    Do not attempt to spend real asset.
+                  </p>
+                </div>
+                {/* <Switch /> */}
+              </div>
+              <div>
+                {kitFeatures.map((feat, index) => (
+                  <div
+                    key={index}
+                    className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+                  >
+                    <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+                    <div className="space-y-1">
+                      <p className="text-sm font-medium leading-none">
+                        {feat.title}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {feat.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+            <CardFooter>
+              <Link href={"/demo/paywall"} target="_blank" passHref className="w-full">
+                <Button className="w-full">
+                  Visit playground <ExternalLink className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </CardFooter>
+          </Card>
+          {            /* </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Bit paywall</DialogTitle>
+                <DialogDescription>A BTC/LNG payment wall for any content</DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog> */}
+
         </Container>
       </Section>
     </Main>
