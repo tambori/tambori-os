@@ -1,12 +1,12 @@
+"use client";
+
 import { Main, Section, Container } from "@/components/craft";
 import { Loader } from "lucide-react";
-import { redirect, useParams, useSearchParams } from "next/navigation";
-
-
+import { redirect, useSearchParams } from "next/navigation";
 
 async function requestToken(code: string) {
   const tokenUrl = `https://api.getalby.com/oauth/token`;
-  const callbackUrl = 'http://localhost:3000/connector/paywall/callback';
+  const callbackUrl = process.env.ALBY_OAUTH_CALLBACK!;
 
   const res = await fetch(tokenUrl, {
     method: "POST",
@@ -16,7 +16,8 @@ async function requestToken(code: string) {
       "redirect_uri": callbackUrl
     }),
     headers: {
-      'Authorization': `Basic ${btoa(`${'NLwNIdhwWZ'}:${'pjBDRAj7S5lxL80RIaWI'}`)}`,
+      // test tokens
+      'Authorization': `Basic ${btoa(`${process.env.ALBY_OAUTH_CLIENT_ID}:${process.env.ALBY_OAUTH_CLIENT_SECRET}`)}`,
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   });
@@ -41,6 +42,7 @@ export default async function ConnectorHandlerPage({ params }: { params: { type:
   if (code) {
     try {
       const tokenJson = await requestToken(code);
+      console.log(tokenJson, ":::token from callback");
       redirect('/demo/paywall')
     } catch (err: any) {
       console.error(err, ":::error in getting the auth_token");
