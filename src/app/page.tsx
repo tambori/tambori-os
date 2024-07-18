@@ -8,7 +8,7 @@ import { Container, Main, Section } from "@/components/craft"
 import Logo from "@/assets/logo/logo-bg.svg";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { BellRing, Check, ExternalLink } from "lucide-react"
+import { Check, ExternalLink } from "lucide-react"
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 
 const paywallFeatures = [
@@ -18,7 +18,7 @@ const paywallFeatures = [
   },
   {
     title: "Manage subscriptions",
-    description: "Built in user subscription manager, with insights and tools."
+    description: "Built in subscription manager, with insights and tools."
   }
 ]
 
@@ -28,8 +28,8 @@ const kitFeatures = [
     description: "Alternative payment model that is in your control."
   },
   {
-    title: "Great experience",
-    description: "Built to be easy for you and your readers, get all the insights."
+    title: "Elevate experience",
+    description: "Built to be easy for you and your readers."
   }
 ]
 
@@ -48,9 +48,9 @@ export default function Entry() {
                 className="object-cover dark:brightness-[0.8] blur-xs dark:grayscale hover:dark:grayscale-0 transition-all hover:cursor-pointer"
               />
 
-              <h1 className="text-3xl font-bold">Watch this space!</h1>
+              <h1 className="text-3xl font-bold text-balance">Watch this space!</h1>
               <p className="text-balance text-muted-foreground">
-                Join the waitlist to be the first to get informed when we go live.
+                Join the waitlist to be the first to know when we go live.
               </p>
             </div>
             <div className="grid gap-4">
@@ -71,14 +71,14 @@ export default function Entry() {
         </Container>
         <Container className="bg-muted !sm:p-4 !lg:p-6 w-full grid lg:gap-4 gap-2 lg:grid-cols-2 sm:grid-cols-1">
           <Section className="col-span-2">
-            <h1 className="text-3xl font-normal">The following domo links are meant for hackathon purposes only.</h1>
+            <h1 className="text-3xl font-normal text-balance">The following is meant for demo purposes only.</h1>
           </Section>
           {/* <Dialog>
             <DialogTrigger asChild> */}
           <Card>
             <CardHeader>
               <CardTitle>Bit Paywall</CardTitle>
-              <CardDescription>A BTC/LNG payment/subscription gateway for merchants and online vendors</CardDescription>
+              <CardDescription className="text-balance">BTC/LNG payment/subscription gateway for merchants and online vendors</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
               <div className="flex items-center space-x-4 rounded-md border p-4">
@@ -104,7 +104,7 @@ export default function Entry() {
                       <p className="text-sm font-medium leading-none">
                         {feat.title}
                       </p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted-foreground text-balance">
                         {feat.description}
                       </p>
                     </div>
@@ -113,7 +113,7 @@ export default function Entry() {
               </div>
             </CardContent>
             <CardFooter>
-              <Link href={"/demo/paywall"} target="_blank" passHref className="w-full">
+              <Link href={"/demo/paywall"} target="_self" passHref className="w-full">
                 <Button className="w-full">
                   Visit playground <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
@@ -131,7 +131,7 @@ export default function Entry() {
                     <Card>
             <CardHeader>
               <CardTitle>BTC BlogKit</CardTitle>
-              <CardDescription>A medium article subscription alternative for personal and targetted articles.</CardDescription>
+              <CardDescription className="text-balance">The medium membership subscription alternative for personal bloggers.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
               <div className="flex items-center space-x-4 rounded-md border p-4">
@@ -157,7 +157,7 @@ export default function Entry() {
                       <p className="text-sm font-medium leading-none">
                         {feat.title}
                       </p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted-foreground text-balance">
                         {feat.description}
                       </p>
                     </div>
@@ -166,7 +166,7 @@ export default function Entry() {
               </div>
             </CardContent>
             <CardFooter>
-              <Link href={"/demo/paywall"} target="_blank" passHref className="w-full">
+              <Link href={"/demo/kit"} target="_self" passHref className="w-full">
                 <Button className="w-full">
                   Visit playground <ExternalLink className="ml-2 h-4 w-4" />
                 </Button>
