@@ -8,7 +8,7 @@ import { Container, Main, Section } from "@/components/craft"
 import Logo from "@/assets/logo/logo-bg.svg";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Check, ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 
 const paywallFeatures = [
