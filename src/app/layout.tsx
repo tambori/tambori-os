@@ -16,7 +16,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "The bitcoin OS for Africans",
   description: "Be self sovereign with the best bitcoin tools for businesses, enterprise and people",
-  icons: [{url: "/tambori-icon-black-rounded.svg"}]
+  icons: [{url: "/tambori-icon-black-rounded.svg", rel: "icon"}]
 };
 
 export default function RootLayout({

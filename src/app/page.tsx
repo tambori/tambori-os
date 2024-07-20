@@ -36,7 +36,7 @@ const kitFeatures = [
 
 export default function Entry() {
   return (
-    <Main className="!p-0 h-screen">
+    <Main className="!p-0 min-h-screen">
       <Section className="w-full !p-0 lg:grid lg:grid-cols-2 sm:grid-cols-1 lg:h-full">
         <Container className="flex items-center justify-center h-full">
           <div className="mx-auto grid w-[350px] gap-6">
@@ -70,7 +70,7 @@ export default function Entry() {
           </div>
         </Container>
         <Container className="bg-muted !sm:p-4 !lg:p-6 w-full grid lg:gap-4 gap-2 lg:grid-cols-2 sm:grid-cols-1">
-          <Section className="col-span-2">
+          <Section className="lg:col-span-2 sm:col-span-1">
             <h1 className="text-3xl font-normal text-balance">The following is meant for demo purposes only.</h1>
           </Section>
           {/* <Dialog>
